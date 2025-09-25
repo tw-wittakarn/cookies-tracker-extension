@@ -99,7 +99,7 @@ async function getCurrentTabCookies() {
     }
 
     const url = new URL(tab.url);
-    const cookies = await chrome.cookies.getAll({ domain: url.hostname });
+    const cookies = await chrome.cookies.getAll({ url: tab.url });
 
     return cookies;
   } catch (error) {
@@ -147,7 +147,10 @@ function createCookieElement(cookieName, cookie) {
   cookieDiv.innerHTML = `
     <div class="cookie-header">
       <div class="cookie-name">${escapeHtml(cookieName)}</div>
-      <button class="remove-btn" data-cookie-name="${escapeHtml(cookieName)}">Remove</button>
+      <div class="cookie-buttons">
+        ${isFound ? `<button class="copy-btn" data-cookie-value="${escapeHtml(cookie.value)}">Copy</button>` : ''}
+        <button class="remove-btn" data-cookie-name="${escapeHtml(cookieName)}">Remove</button>
+      </div>
     </div>
     ${isFound ? `
       <div class="cookie-value">${escapeHtml(cookie.value)}</div>
@@ -156,6 +159,28 @@ function createCookieElement(cookieName, cookie) {
       <div class="cookie-status not-found">⚠ Not found on this domain</div>
     `}
   `;
+
+  // Add event listener for copy button
+  const copyBtn = cookieDiv.querySelector('.copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const cookieValue = e.target.dataset.cookieValue;
+      try {
+        await navigator.clipboard.writeText(cookieValue);
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+        }, 2000);
+      } catch (error) {
+        console.error('Failed to copy cookie value:', error);
+        copyBtn.textContent = 'Failed';
+        setTimeout(() => {
+          copyBtn.textContent = 'Copy';
+        }, 2000);
+      }
+    });
+  }
 
   // Add event listener for remove button
   const removeBtn = cookieDiv.querySelector('.remove-btn');
