@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Tracker",
+  "version": "1.0",
+  "description": "Track and view specific cookies from websites",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookie Tracker"
+  }
+}
