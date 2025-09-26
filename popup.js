@@ -98,7 +98,6 @@ async function getCurrentTabCookies() {
       return [];
     }
 
-    const url = new URL(tab.url);
     const cookies = await chrome.cookies.getAll({ url: tab.url });
 
     return cookies;
