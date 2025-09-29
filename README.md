@@ -8,6 +8,7 @@ A Chrome extension that allows you to track specific cookies across websites. Ad
 - **Persistent Storage**: Your tracked cookie names are saved and persist across browser sessions
 - **Real-time Values**: Shows current values of tracked cookies for the active website
 - **Visual Status**: Clear indication whether a tracked cookie exists on the current domain
+- **Copy Values**: One-click copy cookie values to clipboard for found cookies
 - **Easy Management**: Remove cookies from tracking with one click
 
 ## How to Install
@@ -27,13 +28,15 @@ A Chrome extension that allows you to track specific cookies across websites. Ad
 5. Navigate to any website - the extension will show the values of your tracked cookies for that domain
 6. Cookies found on the current domain show with a green border and their values
 7. Cookies not found show with an orange border
-8. Use the "Remove" button to stop tracking a cookie
+8. Click "Copy" to copy a cookie's value to your clipboard (only available for found cookies)
+9. Use the "Remove" button to stop tracking a cookie
 
 ## Files
 
 - `manifest.json` - Extension configuration and permissions
 - `popup.html` - Extension popup interface
 - `popup.js` - JavaScript functionality for cookie tracking and storage
+- `icons/` - Extension icons in various sizes (16px, 24px, 32px, 48px, 128px)
 - `README.md` - This documentation
 
 ## Permissions
