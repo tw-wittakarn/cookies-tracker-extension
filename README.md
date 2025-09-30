@@ -35,6 +35,7 @@ A Chrome extension that allows you to track specific cookies across websites. Ad
 
 - `manifest.json` - Extension configuration and permissions
 - `popup.html` - Extension popup interface
+- `popup.css` - Styling for the popup interface
 - `popup.js` - JavaScript functionality for cookie tracking and storage
 - `icons/` - Extension icons in various sizes (16px, 24px, 32px, 48px, 128px)
 - `README.md` - This documentation

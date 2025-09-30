@@ -1,0 +1,157 @@
+body {
+  width: 450px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 15px;
+}
+
+.header h2 {
+  margin: 0 0 5px 0;
+  color: #333;
+}
+
+.domain {
+  font-size: 12px;
+  color: #666;
+  font-weight: normal;
+}
+
+.add-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.input-group button {
+  padding: 8px 16px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input-group button:hover {
+  background: #45a049;
+}
+
+.tracked-cookies {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.cookie-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 8px 0;
+  position: relative;
+}
+
+.cookie-item.found {
+  border-left: 4px solid #4CAF50;
+  background: #f8fff8;
+}
+
+.cookie-item.not-found {
+  border-left: 4px solid #ff9800;
+  background: #fff8f0;
+}
+
+.cookie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cookie-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+
+.remove-btn {
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.remove-btn:hover {
+  background: #cc0000;
+}
+
+.cookie-value {
+  margin: 5px 0;
+  word-break: break-all;
+  font-size: 12px;
+  color: #666;
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cookie-status {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.cookie-status.found {
+  color: #4CAF50;
+}
+
+.cookie-status.not-found {
+  color: #ff9800;
+}
+
+.no-cookies {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin: 30px 0;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  margin: 20px 0;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
